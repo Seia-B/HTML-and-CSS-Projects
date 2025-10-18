@@ -1,0 +1,17 @@
+table {
+	border: 1px solid gold;
+}
+td:Hover {
+	background-color: teal;
+	color: lime;
+}
+tr, th {
+	background-color: silver;
+	color: purple;
+}
+tr, td {
+	background-color: black;
+	color: pink;
+}
+
+	

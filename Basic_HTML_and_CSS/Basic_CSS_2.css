@@ -1,0 +1,9 @@
+p {
+	color: black;
+	background: blue;
+	text-align: center;
+	font-weight: bolder;
+}
+p {
+	text-shadow: 1px 1px 0px lime, -1px -1px 0px red;
+}
