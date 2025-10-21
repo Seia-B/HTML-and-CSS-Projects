@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html language="en">
+<head>
+<meta charset="utf-8">
+<title> This is a HTML tags challenge </title>
+<style>
+body { 
+font-family: system-ui, Roboto, "Helvetica Neue", Arial;
+padding: 2rem;
+line-height: 1.5;
+color: #222;
+background: #f8fafc;
+}
+article {
+background: white;
+border-radius: 8px;
+padding: 1.25rem;
+box-shadow: 0 6px 18px rgba(0,0,0,0,06);
+max-width: 700px;
+}
+header h1 { margin 0 0 0 0.5rem 0;
+font-size: 1.25rem;}
+summary { cursor: pointer; font-weight: 600; }
+details[open] summary: :after { content:""; font-weight: 400;}
+summary: :after { content:""; font-weight: 400; margin-left: 0.4rem; }
+.meta { color:#666; font-size: 0.95rem; margin-bottom: 1rem; }
+</style>
+</head>
+<body>
+<article>
+<header>
+<h1> Weekly challenge update </h1>
+<!-- Time element with a machine-readable datetime attribute --!>
+<p class="meta">
+published:
+<time datetime:"2025-10-21">October 21, 2025</time>
+- by <strong> Patricia Badeau </strong>
+</p>
+</header>
+<p>
+This is a short article to update the weekly challenges performed through out this course, it includes an expandable details block for extra notes. </p>
+<!-- Details Tag with summary inside --!>
+<details>
+<summary> Click here to view detailed notes </summary>
+<section>
+<h2>Detailed notes</h2>
+<p>
+-Completed Basic HTML project 1 and Basic HTML project 2. <br>
+-Completed Basic JavaScript project 1 and Basic JavaScript project 2.<br>
+-Coming up Next: Complete a Basic Website HTML.
+</p>
+<h3> Potential Ideas for the Basic Website </h3>
+<ul>
+<li>Recipe Website </li>
+<li>Weather channel Website </li>
+<li> Color theory Website </li>
+</ul>
+
+<p>
+Last updated:
+<time datetime="2025-10-21T14:30:00+00:00">2:30PM(UTC) on Oct 21,2025</time>
+</p>
+</section>
+</details>
+</article>
+<footer>
+<p>HTML tags Challenge completed &copy; 2025 Patricia Badeau. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
