@@ -3,6 +3,7 @@ body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	line-height: 1.6;
+	text-align: center;
 	background-color: #fffaf0
 }
 /* Header */
@@ -62,7 +63,6 @@ details {
 	padding: 15px;
 	width: 420px;
 }
-
 summary::-webkit-details-marker {
 	display: none;
 }
