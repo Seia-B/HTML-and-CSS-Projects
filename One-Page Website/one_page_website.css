@@ -1,0 +1,79 @@
+/* general page styling */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	line-height: 1.6;
+	background-color: #fffaf0
+}
+/* Header */
+header {
+	background-color: #ffcc80;
+	text-align: center;
+	padding: 40px 20px;
+}
+/* NAV bar */
+nav {
+	background-color: #ffa726;
+	text-align: center;
+	padding: 15px;
+}
+nav a {
+	margin: 0 15px;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+}
+nav a:hover {
+	text-decoration: underline;
+}
+/* Article and sections */
+article, section {
+	padding: 40px 20px;
+}
+/* contact form styling */
+form input, form textarea {
+	display: block;
+	margin: 10px 0;
+	padding: 8px;
+	width: 100%;
+	max-width: 400px;
+}
+form input[type="submit"] {
+	background-color: #ffa726;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+form input[type="submit"]:hover {
+	background-color: #fb8c00;
+}
+/* Footer */
+footer {
+	background-color: #ffcc80;
+	text-align: center;
+	padding: 15px;
+}
+details {
+	margin-top: 15px;
+	background: #fff3e0;
+	border: 2px solid #ffa726;
+	border-radius: 10px;
+	padding: 15px;
+	width: 420px;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+summary::before {
+	content:"+";
+}
+details[open] summary::before {
+	content: "-";
+}
+.ingredients {
+	margin-top: 10px;
+}
+
+
