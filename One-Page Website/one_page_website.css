@@ -33,11 +33,11 @@ article, section {
 }
 /* contact form styling */
 form input, form textarea {
-	display: block;
+	display: block, center-right;
 	margin: 10px 0;
 	padding: 8px;
 	width: 100%;
-	max-width: 400px;
+	max-width: 200px;
 }
 form input[type="submit"] {
 	background-color: #ffa726;
@@ -45,6 +45,8 @@ form input[type="submit"] {
 	border: none;
 	padding: 10px 20px;
 	cursor: pointer;
+	Text-align: center;
+	form-align: center;
 }
 form input[type="submit"]:hover {
 	background-color: #fb8c00;
@@ -62,18 +64,27 @@ details {
 	border-radius: 10px;
 	padding: 15px;
 	width: 420px;
+	align-items: center;
 }
 summary::-webkit-details-marker {
 	display: none;
+	align-items: center;
+	display: flex;
+	
 }
 summary::before {
 	content:"+";
+	text-align: center;
+	align-items: center;
 }
 details[open] summary::before {
 	content: "-";
+	align-items: center;
+	
 }
 .ingredients {
 	margin-top: 10px;
+	align-items: center;
 }
 
 
