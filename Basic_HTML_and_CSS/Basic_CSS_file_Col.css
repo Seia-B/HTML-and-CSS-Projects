@@ -1,0 +1,31 @@
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+/*----------------------------
+COLUMN STYLING
+----------------------------*/
+
+.col-style-1 {
+    background-color: #f0f8ff;
+    width: 30%;
+}
+
+.col-style-2 {
+    background-color: #f8f8ff;
+    width: 40%;
+}
+
+.col-style-3 {
+    background-color: #e6e6fa;
+    width: 30%;
+}
+
