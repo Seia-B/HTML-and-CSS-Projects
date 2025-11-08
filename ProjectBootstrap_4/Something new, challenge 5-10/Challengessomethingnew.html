@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="8-utf">
+    <meta name="viewport" , initial-scale="1">
+    <title>Something New + Challenge 5-10</title>
+    <link rel="stylesheet" href="../Challenge/Challenge.css">
+    </head>
+    <body>
+        <!--FIXED NAV BAR-->
+        <nav class="navbar">
+            <div class="nav-inner">
+                <a href="#Home" class="brand">MyWebsite</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#footer">Footer</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header id="home" class="hero">
+            <h1>Welcome to Color Theory</h1>
+            <p class="intro">Here you will learn the concept of color theory.</p>
+        </header>
+
+        <main class="container">
+            <!--Two-column layout-->
+            <section class="columns">
+                <article class="col col-left">
+                    <h2>Color Wheel</h2>
+                    <!--Image wrapper : centers image, adds overlay & text-->
+                    <div class="image-wrap">
+                        <img src="../Challenge/ColorWheel.jpg" alt="Image of a color wheel" class="centered-image">
+                        <div class="img-overlay"></div>
+                        <div class="img-text">The beautiful world of colors</div>
+                    </div>
+
+                    <p class="hover-paragraph">Color theory is the study of how colors interact and how to use them to create specific visual effects and evoke emotions. It's a practical guide for mixing colors and is based on the principles of the color wheel, which shows the relationships between primary, secondary, and tertiary colors. Color theory is used by artists and designers to choose color combinations that create visual harmony and convey a specific mood or message.</p>
+
+                    <h3>This video explains color theory in more depth</h3>
+                    <!--Autoplay muted loop youtube video-->
+                    <div class="video-container">
+                        <iframe width="460" height="260" src="https://www.youtube.com/embed/YeI6Wqn4I78?si=aGlZMucQb5Boj_GXautoplay=1&mute=1&loop=1&playlist=YeI6Wqn4I78?si=aGlZMucQb5Boj_GX"
+                        title="Color Theory" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </article>
+
+                <aside class="col col-right">
+                    <h2 id="about">Colors and what their use.</h2>
+                    <!--TABLE WITH REQUIRED STYLES-->
+                    <table class="info-table">
+                        <thead>
+                            <tr>
+                                <th>Colors</th>
+                                <th>And their use </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Color Harmony</td>
+                                <td>In visual experiences, harmony is something that is pleasing to the eye. It engages the viewer and it creates an inner sense of order, a balance in the visual experience. When something is not harmonious, it's either boring or chaotic. At one extreme is a visual experience that is so bland that the viewer is not engaged. The human brain will reject under-stimulating information. At the other extreme is a visual experience that is so overdone, so chaotic that the viewer can't stand to look at it. The human brain rejects what it cannot organize, what it cannot understand. The visual task requires that we present a logical structure. Color harmony delivers visual interest and a sense of order.
+                                    In summary, extreme unity leads to under-stimulation, extreme complexity leads to over-stimulation. Harmony is a dynamic equilibrium.</td>
+                            </tr>
+                            <tr>
+                                <td>Color Context</td>
+                                <td>How color behaves in relation to other colors and shapes is a complex area of color theory. There is different readings of the same color depending on light reflection, shadows and even color blindness in some cases.</td>
+                            </tr>
+                            <tr>
+                                <td>Relativity of colors</td>
+                                <td>Observing the effects colors have on each other is the starting point for understanding the relativity of color. The relationship of values, saturations and the warmth or coolness of respective hues can cause noticeable differences in our perception of color.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </aside>
+            </section>
+        </main>
+
+        <footer id="#footer" class="page-footer">
+            <p> &copy; 2025 MyWebsite - All rights reserved </p>
+        </footer>
+    </body>
+</html>
