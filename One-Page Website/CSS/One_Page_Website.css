@@ -1,0 +1,534 @@
+:root {
+    --bg: #ffffff;
+    --muted: #333;
+    --accent: #a86ed2;
+    --accent-2: #8b5fdc;
+    --card-bg: #fff;
+    --radius: 12px;
+    --container-max: 1180px;
+}
+
+/* GLOBAL BACKGROUND IMAGE */
+body {
+    background-image: url('../background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px) brightness(0.8);
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(200, 180, 255, 0.25);
+    z-index: -1;
+}
+
+/* BOX SIZING */
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+/* General Styling */
+html {
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    position: static;
+    margin: 0 auto;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: var(--muted);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* HEADER */
+.site-header {
+    padding: 18px 0;
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.site-title {
+    margin: 0;
+    color: #650153;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+}
+
+.site-title .byline {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--accent-2);
+}
+
+/* NAV MENU */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #222;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.menu a:hover, .menu a:focus {
+    background: var(--accent);
+    color: #fff;
+    transform: translateY(-2px);
+    transition: all .18s ease;
+    outline: none;
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+    text-align: center;
+    color: #650153;
+    font-size: 2rem;
+    margin: 32px 0 24px 0;
+    font-weight: 700;
+}
+
+/* GALLERY SECTION */
+.gallery-section {
+    padding: 32px 0;
+}
+
+/* RECIPE GRID - BOX LAYOUT */
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 280px));
+    gap: 20px;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* RECIPE CARD - BOX STYLE */
+.recipe-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.recipe-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(168, 110, 210, 0.25);
+}
+
+/* IMAGE CONTAINER FOR SQUARE ASPECT RATIO */
+.recipe-card > img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* RECIPE IMAGE - SQUARE */
+.recipe-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Image wrapper to contain overlay */
+.recipe-card > a,
+.recipe-card > div:first-child {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.recipe-card:hover .recipe-img {
+    transform: scale(1.05);
+}
+
+.recipe-img:focus {
+    outline: 3px solid var(--accent);
+    outline-offset: -3px;
+}
+
+/* PHOTO OVERLAY */
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    padding: 8px;
+    z-index: 1;
+}
+
+.recipe-card:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-overlay h3 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.photo-overlay p {
+    margin: 0;
+    color: #ffd6ff;
+    font-size: 0.85rem;
+}
+
+/* RECIPE CARD CONTENT */
+.recipe-title {
+    margin: 0;
+    padding: 12px 16px 10px;
+    color: #650153;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* TOGGLE DETAILS */
+.toggle {
+    padding: 0 16px 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.toggle-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    box-shadow: 0 3px 10px rgba(168, 110, 210, 0.3);
+    list-style: none;
+}
+
+.toggle-btn::-webkit-details-marker {
+    display: none;
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus {
+    background: var(--accent-2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(168, 110, 210, 0.4);
+    outline: none;
+}
+
+/* TOGGLE CONTENT */
+.toggle-content {
+    background: #fbf7ff;
+    padding: 0 20px;
+    margin-top: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    opacity: 0;
+}
+
+.toggle[open] .toggle-content {
+    padding: 20px;
+    max-height: 3000px;
+    opacity: 1;
+    transition: max-height 0.4s ease, padding 0.3s ease, opacity 0.3s ease;
+}
+
+.toggle-content h4 {
+    margin: 0 0 12px 0;
+    color: #650153;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.toggle-content h1 {
+    margin: 20px 0 12px 0;
+    color: #650153;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.toggle-content h3 {
+    margin: 20px 0 12px 0;
+    color: #650153;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* INGREDIENTS AND INSTRUCTIONS LISTS */
+.ingredients-list {
+    padding-left: 1.2rem;
+    margin: 8px 0 16px 0;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.ingredients-list li {
+    margin-bottom: 6px;
+}
+
+.toggle-content ol {
+    padding-left: 1.2rem;
+    margin: 8px 0 16px 0;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.toggle-content ol li {
+    margin-bottom: 10px;
+}
+
+/* VIDEO SECTION */
+.video-section {
+    padding: 50px 20px;
+    background-color: rgba(250, 245, 255, 0.8);
+    text-align: center;
+    margin: 40px 0;
+    border-radius: 16px;
+}
+
+.video-intro {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 25px;
+    max-width: 820px;
+    margin: 0 auto 24px;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding-top: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: 40px 0;
+}
+
+.contact {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact h3 {
+    margin: 0 0 20px 0;
+    color: #650153;
+    font-size: 1.2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-input {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 1rem;
+    width: 100%;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.submit-btn {
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(168, 110, 210, 0.3);
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+    background: var(--accent-2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(168, 110, 210, 0.4);
+    outline: none;
+}
+
+/* FOOTER */
+.site-footer {
+    padding: 24px 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    margin-top: 40px;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+/* ACCESSIBILITY */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .recipes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 240px));
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .section-heading {
+        font-size: 1.6rem;
+        margin: 24px 0 16px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .recipes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .header-inner {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact {
+        padding: 24px;
+    }
+
+    .video-wrapper {
+        max-width: 100%;
+    }
+}
+
+/* FOCUS STYLES FOR ACCESSIBILITY */
+summary:focus,
+.toggle-btn:focus {
+    outline: 3px solid rgba(168, 110, 210, 0.5);
+    outline-offset: 3px;
+}
